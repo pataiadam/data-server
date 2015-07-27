@@ -26,7 +26,7 @@ module.exports = {
       return res.json(fs.readdirSync('./api/datas/estimate'))
     }else if(!!req.body.action) {
       var file = fs.readFileSync('./api/datas/estimate/' + req.body.action, {encoding: 'utf8'});
-      var array = file.split('\r\n');
+      var array = file.split('\n');
       var data = [];
       var labels = [];
       var i = 0;
@@ -67,7 +67,7 @@ sails.log.debug(outData);
       return res.json(fs.readdirSync('./api/datas/brier'))
     }else if(!!req.body.action){
       var file = fs.readFileSync('./api/datas/brier/'+req.body.action, {encoding: 'utf8'});
-      var array = file.split('\r\n');
+      var array = file.split('\n');
       var data = [];
       var labels = [];
       array.map(function (s, t) {
@@ -104,7 +104,7 @@ sails.log.debug(outData);
       return res.json(fs.readdirSync('./api/datas/estimate'))
     }else if(!!req.body.action){
       var file = fs.readFileSync('./api/datas/estimate/'+req.body.action, {encoding: 'utf8'});
-      var array = file.split('\r\n');
+      var array = file.split('\n');
       var data = [];
       var labels = [];
       var limit = req.body.limit || 50;
