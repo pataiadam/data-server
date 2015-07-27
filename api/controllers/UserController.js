@@ -1,0 +1,58 @@
+/**
+ * UserController
+ *
+ * @description :: Server-side logic for managing users
+ * @help        :: See http://links.sailsjs.org/docs/controllers
+ */
+
+module.exports = {
+	index: function(req, res){
+    res.view();
+  },
+
+  getData: function(req, res){
+    res.json({
+      "nodes": [
+        {
+          "id": "n0",
+          "label": "A node",
+          "x": 0,
+          "y": 0,
+          "size": 3
+        },
+        {
+          "id": "n1",
+          "label": "Another node",
+          "x": 3,
+          "y": 1,
+          "size": 2
+        },
+        {
+          "id": "n2",
+          "label": "And a last one",
+          "x": 1,
+          "y": 3,
+          "size": 1
+        }
+      ],
+      "edges": [
+        {
+          "id": "e0",
+          "source": "n0",
+          "target": "n1"
+        },
+        {
+          "id": "e1",
+          "source": "n1",
+          "target": "n2"
+        },
+        {
+          "id": "e2",
+          "source": "n2",
+          "target": "n0"
+        }
+      ]
+    })
+  }
+};
+
