@@ -1,9 +1,19 @@
 function getBrierData(action, limit){
+  if (action !== 'getFiles') {
+    action = $.map($( "input:checked" ), function(o) { return o["id"]; });
+    action=action.pop();
+  }
   $.post( "getBrierData", { action: action, limit: limit || 20 }, function( data ) {
     if (action !== 'getFiles') {
+      if(!data.data)
+        return;
       $("#title").text(action);
       var options = {
-        animation: false
+        animation: false,
+        pointDotRadius : 2,
+        pointHitDetectionRadius : 1,
+        datasetFill : false,
+        legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
       };
       var ctx = document.getElementById("brierChart").getContext("2d");
 
@@ -27,12 +37,9 @@ function getBrierData(action, limit){
         var result = $(".result");
         //result.remove();
         var d=document.createElement('div');
-        $(d).attr('id', val)
-          .html('<a href="#">'+val+'</a>')
-          .appendTo(result)
-          .click(function() {
-            getBrierData(val);
-          });
+        $(d)
+          .html('<input type="checkbox" id="'+val+'" >'+val+'<br>')
+          .appendTo(result).on( "click",  function(){getBrierData()});
       });
     }
   });
@@ -44,7 +51,11 @@ function getLogarithmicData(action, limit){
     if (action !== 'getFiles') {
       $("#title-logarithmic").text(action);
       var options = {
-        animation: false
+        animation: false,
+        pointDotRadius : 2,
+        pointHitDetectionRadius : 1,
+        datasetFill : false,
+        legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
       };
       var ctx = document.getElementById("logarithmicChart").getContext("2d");
 
