@@ -21,7 +21,7 @@ function process(){
     },
     data: [{alg: 'pagerank', method: 'distance'}]
   };
-  $.post( "main/process", {order: order}, function( data ) {
+  $.post( "process", {order: order}, function( data ) {
     console.log(data);
     var options = {
       animation: false
