@@ -116,7 +116,7 @@ sails.log.debug(outData);
 
       array.map(function (s, t) {
         var v = s.split('\t');
-
+sails.log.debug(v)
         if(parseFloat(v[3])>=limit){
           if(v[4]==='1'){
             success.value++;

@@ -29,9 +29,9 @@ module.exports.views = {
   * https://github.com/balderdashy/sails-wiki/blob/0.9/config.views.md#engine *
   *                                                                           *
   ****************************************************************************/
-
-  engine: 'ejs',
-
+  engine: 'handlebars',
+  layout: 'layout', //whatever your default layout is
+  helpers: require('./helpers'), //pull in your helpers (I store it in config/helpers.js)
 
   /****************************************************************************
   *                                                                           *
@@ -75,7 +75,6 @@ module.exports.views = {
   *                                                                           *
   ****************************************************************************/
 
-  layout: 'layout',
 
   /****************************************************************************
   *                                                                           *
