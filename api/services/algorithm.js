@@ -3,9 +3,10 @@ var blas1 = require('ndarray-blas-level1');
 var ndarray = require('ndarray');
 module.exports = {
   pagerank: function(data, teams){
-    var m = data.length-1;
-    var n = teams.length;
 
+    var m = data.length;
+    var n = teams.length;
+    sails.log.debug(m)
     var C = matrix([n,n]);
     for(var i = 0; i<m; i++){
       var row = data[i].split(',');

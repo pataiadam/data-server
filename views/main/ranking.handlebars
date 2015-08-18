@@ -31,37 +31,5 @@
     </div>
   </div>
 
-    <!--Time Selector-->
-  <p>
-      <label for="amount">Time/matches range:</label>
-      <input type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
-  <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-      <div class="ui-slider-range ui-widget-header ui-corner-all" >
-      </div>
-  </div>
-
-    <!--Method Selector-->
-
-    <div class="form-group">
-        <label>Ranking/Estimate method (not working yet)</label>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="pagerank">Pagerank/distance<br>
-            </label>
-            <label>
-                <input type="checkbox" value="pagerank">Colley/distance<br>
-            </label>
-            <label>
-                <input type="checkbox" value="pagerank">Pagerank/BT<br>
-            </label>
-            <label>
-                <input type="checkbox" value="pagerank">...<br>
-            </label>
-        </div>
-    </div>
-
-    <button type="button" class="btn btn-lg btn-info" onclick="process()">Process</button>
-
-    <canvas id="rankingChart" width="600" height="400" ></canvas>
+    <a type="button" class="btn btn-lg btn-info" onclick="select()">Select</a>
 </div>
